@@ -1,16 +1,30 @@
-use std::fs::OpenOptions;
-use std::io::Write;
+// Авторские права (c) 2025 urdekcah. Все права защищены.
+//
+// Этот исходный код распространяется под лицензией AGPL-3.0,
+// текст которой находится в файле LICENSE в корневом каталоге данного проекта.
+use anyhow::{Context, Result};
+use std::env;
+use tracing::error;
+use urdekcah::{WeatherConfig, WeatherService};
 
-fn main() {
-    let content = "자동으로 추가된 텍스트입니다.\n";
-    let file_path = "README.md";
+#[tokio::main]
+async fn main() -> Result<()> {
+  tracing_subscriber::fmt()
+    .with_file(true)
+    .with_line_number(true)
+    .with_thread_ids(true)
+    .init();
 
-    let mut file = OpenOptions::new()
-        .write(true)
-        .append(true)
-        .open(file_path)
-        .expect("readme.md 파일을 열 수 없습니다.");
+  let api_key =
+    env::var("OPENWEATHER_API_KEY").context("Missing OPENWEATHER_API_KEY environment variable")?;
 
-    file.write_all(content.as_bytes())
-        .expect("readme.md 파일에 내용을 추가할 수 없습니다.");
+  let config = WeatherConfig::new(api_key, "README.md", std::time::Duration::from_secs(300))?;
+  let service = WeatherService::new(config);
+
+  if let Err(e) = service.run().await {
+    error!("Failed to update weather: {:?}", e);
+    std::process::exit(1);
+  }
+
+  Ok(())
 }
