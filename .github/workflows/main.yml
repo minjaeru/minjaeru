@@ -1,0 +1,35 @@
+name: README build
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 */3 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      
+      - name: build rust
+        run: cargo build --release
+        
+      - name: run binary
+        run: ./target/release/cbgcbg
+        
+      - name: commit
+          run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add readme.md
+            git commit -m "Update README via Rust script"
+            git push
