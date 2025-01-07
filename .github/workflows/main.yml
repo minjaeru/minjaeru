@@ -24,7 +24,9 @@ jobs:
         run: cargo build --release
         
       - name: run binary
-        run: ./target/release/cbgcbg
+        run: ./target/release/urdekcah
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         
       - name: commit
         env:
