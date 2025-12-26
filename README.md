@@ -3,5 +3,5 @@
 
 <!--START_SECTION:weather:moscow-->
 Currently in **Moscow** (RU), the weather is: **0.5°C** (feels like **-5.0°C**), ***overcast clouds***<br/>
-On *December 26, 2025*, the *sun rises* at 🌅**08:59** and *sets* at 🌇**16:00**.
+On *December 27, 2025*, the *sun rises* at 🌅**08:59** and *sets* at 🌇**16:01**.
 <!--END_SECTION:weather-->
