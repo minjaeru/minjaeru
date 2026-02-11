@@ -3,5 +3,5 @@
 
 <!--START_SECTION:weather:moscow-->
 Currently in **Moscow** (RU), the weather is: **-5.9°C** (feels like **-12.2°C**), ***light snow***<br/>
-On *February 11, 2026*, the *sun rises* at 🌅**08:03** and *sets* at 🌇**17:23**.
+On *February 12, 2026*, the *sun rises* at 🌅**08:01** and *sets* at 🌇**17:26**.
 <!--END_SECTION:weather-->
