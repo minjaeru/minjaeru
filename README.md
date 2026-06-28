@@ -2,6 +2,6 @@
 자동으로 추가된 텍스트입니다.
 
 <!--START_SECTION:weather:moscow-->
-Currently in **Moscow** (RU), the weather is: **19.6°C** (feels like **19.1°C**), ***clear sky***<br/>
-On *June 28, 2026*, the *sun rises* at 🌅**03:47** and *sets* at 🌇**21:17**.
+Currently in **Moscow** (RU), the weather is: **17.4°C** (feels like **16.9°C**), ***scattered clouds***<br/>
+On *June 29, 2026*, the *sun rises* at 🌅**03:48** and *sets* at 🌇**21:17**.
 <!--END_SECTION:weather-->
